@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sérum Éclat — Le Perlé</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+
+  <!-- PROMO BAR -->
+  <div class="promo-bar">
+    NUEVO: Descubre la nueva mascarilla facial nocturna &mdash; <a href="#">Descubrir</a>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-left">
+        <button class="icon-btn" data-menu-toggle aria-label="Abrir menú">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+        </button>
+      </div>
+      <a href="index.html" class="header-logo" aria-label="Le Perlé — Inicio">
+        <span class="logo-mark">pé</span>
+        <span class="logo-sub">Le Perlé</span>
+      </a>
+      <div class="header-right">
+        <button class="icon-btn" data-search-toggle aria-label="Buscar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+        </button>
+        <a href="cart.html" class="icon-btn" aria-label="Carrito">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-badge">0</span>
+        </a>
+        <button class="icon-btn" aria-label="Favoritos">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </button>
+        <button class="icon-btn" aria-label="Mi cuenta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SEARCH PANEL -->
+  <div class="search-panel" id="search-panel" role="search">
+    <input type="search" placeholder="Buscar productos..." aria-label="Buscar productos">
+    <button class="search-close" id="search-close-btn" aria-label="Cerrar búsqueda">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <!-- MENU OVERLAY -->
+  <div class="menu-overlay" id="menu-overlay" aria-hidden="true"></div>
+
+  <!-- SIDE MENU -->
+  <nav class="side-menu" id="side-menu" aria-label="Menú principal">
+    <div class="side-menu-header">
+      <a href="index.html" class="header-logo"><span class="logo-mark" style="font-size:1.8rem">pé</span></a>
+      <button class="menu-close-btn icon-btn" data-menu-close aria-label="Cerrar menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="side-menu-nav">
+      <a href="index.html">Inicio</a>
+      <a href="product.html">Producto destacado</a>
+      <div class="side-menu-divider"></div>
+      <a href="contact.html">Contáctenos</a>
+      <a href="legal.html">Información legal</a>
+    </div>
+    <div class="side-menu-actions">
+      <a href="cart.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        Carrito
+      </a>
+      <a href="#">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+        </svg>
+        Favoritos
+      </a>
+      <a href="#">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+        Mi cuenta
+      </a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- PRODUCT SECTION -->
+    <section class="container" style="padding-top:var(--sp-md);padding-bottom:var(--sp-lg)">
+
+      <!-- Breadcrumb -->
+      <nav aria-label="Ruta de navegación" style="margin-bottom:var(--sp-md)">
+        <p style="font-size:0.72rem;color:var(--clr-gray-mid);letter-spacing:0.06em;">
+          <a href="index.html" style="color:var(--clr-gray-mid);transition:color 0.3s" onmouseover="this.style.color='var(--clr-black)'" onmouseout="this.style.color='var(--clr-gray-mid)'">Inicio</a>
+          &nbsp;/&nbsp;
+          <a href="#" style="color:var(--clr-gray-mid)">Serums</a>
+          &nbsp;/&nbsp;
+          <span style="color:var(--clr-black)">Sérum Éclat</span>
+        </p>
+      </nav>
+
+      <div class="product-layout">
+
+        <!-- GALLERY -->
+        <div class="product-gallery" aria-label="Galería del producto">
+          <div class="gallery-thumbs" role="list">
+
+            <button class="gallery-thumb is-active" aria-label="Ver imagen 1" data-src="1" role="listitem">
+              <img src="SerumEclat.jpeg" alt="Producto vista 1" style="width:100%;height:100%;object-fit:cover;">
+            </button>
+
+            <button class="gallery-thumb" aria-label="Ver imagen 2" data-src="2" role="listitem">
+              <img src="SerumIntenseEclat.jpeg" alt="Producto vista 2" style="width:100%;height:100%;object-fit:cover;">
+            </button>
+
+            <button class="gallery-thumb" aria-label="Ver imagen 3" data-src="3" role="listitem">
+              <img src="SerumEclat.jpeg" alt="Producto vista 3" style="width:100%;height:100%;object-fit:cover;">
+            </button>
+
+            <button class="gallery-thumb" aria-label="Ver imagen 4" data-src="4" role="listitem">
+              <img src="SerumEclat.jpeg" alt="Producto detalle" style="width:100%;height:100%;object-fit:cover;">
+            </button>
+
+          </div>
+
+          <div class="gallery-main">
+            <img id="main-product-image" src="SerumEclat.jpeg" alt="Sérum Éclat - Imagen principal" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+        </div>
+
+        <!-- PRODUCT INFO -->
+        <div class="product-info">
+          <p class="product-info__eyebrow">Sérum facial</p>
+          <h1 class="product-info__name">Sérum Éclat<br>Glow Light Serum</h1>
+          <p class="product-info__tagline">El sérum que activa tu brillo natural, unifica el tono y aporta luminosidad duradera.</p>
+          <p class="product-info__price">80,00€</p>
+
+          <!-- Size selector -->
+          <span class="size-label">Formato</span>
+          <div class="size-selector" role="group" aria-label="Seleccionar tamaño">
+            <button class="size-btn is-active" aria-pressed="true">30ml</button>
+            <button class="size-btn" aria-pressed="false">50ml</button>
+          </div>
+
+          <!-- Actions -->
+          <div class="product-actions">
+            <button
+              class="btn btn--primary btn--full"
+              data-add-cart
+              data-product-id="serum-eclat-30ml"
+              data-product-name="Sérum Éclat"
+              data-product-variant="Glow Light Serum · 30ml"
+              data-product-price="80"
+              data-product-image="images/product.png"
+              aria-label="Añadir al carrito">
+              Añadir a la cesta
+            </button>
+            <button class="fav-btn-large" data-fav aria-label="Añadir a favoritos">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </button>
+          </div>
+
+          <!-- Trust badges -->
+          <div style="display:flex;gap:1.5rem;padding:1rem 0;border-top:var(--border);border-bottom:var(--border);margin-bottom:var(--sp-md)">
+            <div style="display:flex;align-items:center;gap:0.5rem">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="16" height="16" style="color:var(--clr-gray-mid)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span style="font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--clr-gray-mid)">Fórmula limpia</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.5rem">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="16" height="16" style="color:var(--clr-gray-mid)"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              <span style="font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--clr-gray-mid)">Envío 24-48h</span>
+            </div>
+          </div>
+
+          <!-- TABS -->
+          <div class="product-tabs">
+            <div class="tabs-nav" role="tablist">
+              <button class="tab-btn is-active" data-tab="tab-desc" role="tab" aria-selected="true" aria-controls="tab-desc">Descripción</button>
+              <button class="tab-btn" data-tab="tab-ing" role="tab" aria-selected="false" aria-controls="tab-ing">Ingredientes</button>
+            </div>
+
+            <div class="tab-panel is-active" id="tab-desc" role="tabpanel">
+              <p>Sérum Éclat es el sérum ligero del tratamiento dérmico de la piel. Se disuelve en el poro y el exceso de sebo para una limpieza profunda y una piel purificada, despejada y luminosa.</p>
+              <p>Perfecto para pieles mixtas, grasas y con tendencia al grano. La piel se siente limpia, suave y sin brillos grasos, con un acabado de luz interior.</p>
+              <p>Resultados visibles desde la primera aplicación. Con uso continuado, la piel gana claridad, uniformidad y un brillo saludable duradero.</p>
+            </div>
+
+            <div class="tab-panel" id="tab-ing" role="tabpanel">
+              <p class="ingredients-list">Aqua, Niacinamide, Glycerin, Pentylene Glycol, Zinc PCA, Sodium Hyaluronate, Panthenol, Allantoin, Adenosine, Centella Asiatica Extract, Saccharide Isomerate, Bifida Ferment Lysate, Lactobacillus Ferment, Ceramide NP, Phytosphingosine, Cholesterol, Tocopherol, Camellia Sinensis Leaf Extract.</p>
+              <p style="margin-top:1rem;font-size:0.78rem;color:var(--clr-gray-mid);font-style:italic;">*Ingredientes de origen natural certificado. Sin parabenos, sin silicona, sin fragancia artificial.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- APPLICATION SECTION -->
+    <section class="product-application">
+      <div class="container">
+        <div class="application-inner">
+
+          <div class="application-image">
+            <img src="SerumEclat2.jpeg" alt="Aplicación del producto" style="width:100%;height:100%;object-fit:cover;min-height:400px;">
+          </div>
+
+          <div class="application-content">
+            <h2>Aplicación del producto</h2>
+            <div class="application-steps">
+              <div class="step">
+                <span class="step__num">01</span>
+                <p class="step__text">Aplicar sobre la piel limpia y seca. Distribuir 3-4 gotas por el rostro con movimientos suaves ascendentes.</p>
+              </div>
+              <div class="step">
+                <span class="step__num">02</span>
+                <p class="step__text">Masajear suavemente con la yema de los dedos hasta su completa absorción, prestando especial atención a las zonas de mayor brillo.</p>
+              </div>
+              <div class="step">
+                <span class="step__num">03</span>
+                <p class="step__text">Continuar con tu hidratante habitual y, por la mañana, aplicar siempre protección solar. Usar mañana y noche.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECOMMENDATIONS -->
+    <section class="recommendations">
+      <div class="container">
+        <h2 class="section-title">Nuestra recomendación para ti</h2>
+        <div class="products-grid" style="grid-template-columns:repeat(3,1fr)">
+
+          <article class="product-card">
+            <div class="product-card__image-wrap">
+              <img src="SoftCloudCleanse.jpeg" alt="Soft Cloud Cleaner" style="width:100%;height:100%;object-fit:cover;">
+              <button class="product-card__fav" data-fav aria-label="Añadir a favoritos">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+              </button>
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Soft Cloud Cleaner</h3>
+              <p class="product-card__variant">Limpiador · 100ml</p>
+              <p class="product-card__price">42,00€</p>
+              <button
+                class="product-card__add"
+                data-add-cart
+                data-product-id="soft-cloud-cleaner-100ml"
+                data-product-name="Soft Cloud Cleaner"
+                data-product-variant="Limpiador · 100ml"
+                data-product-price="42"
+                data-product-image="images/product.png">
+                Añadir a la cesta
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__image-wrap">
+              <img src="SerumEclat2.jpeg" alt="Recarga Sérum Éclat" style="width:100%;height:100%;object-fit:cover;">
+              <button class="product-card__fav" data-fav aria-label="Añadir a favoritos">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+              </button>
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Recarga Sérum Éclat</h3>
+              <p class="product-card__variant">Recambio · 50ml</p>
+              <p class="product-card__price">65,00€</p>
+              <button
+                class="product-card__add"
+                data-add-cart
+                data-product-id="recarga-serum-eclat-50ml"
+                data-product-name="Recarga Sérum Éclat"
+                data-product-variant="Recambio · 50ml"
+                data-product-price="65"
+                data-product-image="product.png">
+                Añadir a la cesta
+              </button>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-card__image-wrap">
+              <img src="EclatSkinTint.jpeg" alt="Éclat Skin Tint" style="width:100%;height:100%;object-fit:cover;">
+              <button class="product-card__fav" data-fav aria-label="Añadir a favoritos">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+              </button>
+            </div>
+            <div class="product-card__info">
+              <h3 class="product-card__name">Éclat Skin Tint</h3>
+              <p class="product-card__variant">Tratamiento · 30ml</p>
+              <p class="product-card__price">72,00€</p>
+              <button
+                class="product-card__add"
+                data-add-cart
+                data-product-id="eclat-skin-tint-30ml"
+                data-product-name="Éclat Skin Tint"
+                data-product-variant="Tratamiento · 30ml"
+                data-product-price="72"
+                data-product-image="images/product.png">
+                Añadir a la cesta
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-col">
+          <h4>Le Perlé</h4>
+          <ul>
+            <li><a href="#">Nuestra historia</a></li>
+            <li><a href="#">Le Perlé Club</a></li>
+            <li><a href="#">Sostenibilidad</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Atención al cliente</h4>
+          <ul>
+            <li><a href="contact.html">Contáctenos</a></li>
+            <li><a href="#">Envíos y entregas</a></li>
+            <li><a href="#">Devoluciones</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="legal.html">Aviso legal</a></li>
+            <li><a href="legal.html">Privacidad</a></li>
+            <li><a href="legal.html">Cookies</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Síguenos</h4>
+          <div class="footer-social">
+            <a href="#">Instagram</a>
+            <a href="#">TikTok</a>
+            <a href="#">Pinterest</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Le Perlé. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="cart-system.js"></script>
+</body>
+</html>

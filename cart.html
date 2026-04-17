@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrito - Le Perlé</title>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <style>
+    .cart-page {
+      padding: 3rem 0 5rem;
+      min-height: 70vh;
+    }
+
+    .cart-layout {
+      display: grid;
+      grid-template-columns: 1.7fr 0.95fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .cart-panel,
+    .cart-summary {
+      background: var(--clr-white);
+      border: var(--border);
+      padding: 1.5rem;
+    }
+
+    .cart-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300;
+      margin-bottom: 0.5rem;
+    }
+
+    .cart-subtitle {
+      color: var(--clr-gray-mid);
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    .cart-list {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 88px 1fr auto;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-top: var(--border);
+      align-items: center;
+    }
+
+    .cart-item:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .cart-item__media {
+      width: 88px;
+      height: 110px;
+      background: var(--clr-bg-alt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--clr-gray-mid);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      overflow: hidden;
+    }
+
+    .cart-item__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cart-item__name {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .cart-item__meta {
+      color: var(--clr-gray-mid);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+    }
+
+    .cart-item__controls {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .qty-box {
+      display: inline-flex;
+      align-items: center;
+      border: var(--border-dark);
+    }
+
+    .qty-btn {
+      width: 36px;
+      height: 36px;
+      font-size: 1rem;
+    }
+
+    .qty-value {
+      width: 42px;
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    .cart-link-btn,
+    .remove-btn {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--clr-gray-dark);
+    }
+
+    .cart-item__price {
+      text-align: right;
+    }
+
+    .cart-item__unit {
+      color: var(--clr-gray-mid);
+      font-size: 0.8rem;
+    }
+
+    .cart-item__total {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+    }
+
+    .cart-summary h2 {
+      font-family: var(--font-serif);
+      font-size: 1.7rem;
+      font-weight: 300;
+      margin-bottom: 1.25rem;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.7rem 0;
+      border-bottom: var(--border);
+      font-size: 0.9rem;
+    }
+
+    .summary-row--total {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      border-bottom: none;
+      padding-top: 1rem;
+    }
+
+    .cart-actions {
+      display: grid;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    .empty-cart {
+      padding: 2rem 0;
+      border-top: var(--border);
+      display: none;
+    }
+
+    .empty-cart.is-visible {
+      display: block;
+    }
+
+    .empty-cart p {
+      color: var(--clr-gray-mid);
+      margin-bottom: 1.2rem;
+      max-width: 44ch;
+    }
+
+    .cart-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .cart-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .cart-item {
+        grid-template-columns: 72px 1fr;
+      }
+
+      .cart-item__price {
+        grid-column: 2;
+        text-align: left;
+      }
+
+      .cart-panel,
+      .cart-summary {
+        padding: 1rem;
+      }
+
+      .cart-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="promo-bar">
+    NUEVO · Descubre la nueva mascarilla facial nocturna —
+    <a href="product.html">Descubrir</a>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-left">
+        <button class="icon-btn" data-menu-toggle aria-label="Abrir menú">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+        </button>
+      </div>
+      <a href="index.html" class="header-logo" aria-label="Le Perlé — Inicio">
+        <span class="logo-mark">pé</span>
+        <span class="logo-sub">Le Perlé</span>
+      </a>
+      <div class="header-right">
+        <button class="icon-btn" data-search-toggle aria-label="Buscar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+        </button>
+        <a href="cart.html" class="icon-btn" aria-label="Carrito">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge">0</span>
+        </a>
+        <button class="icon-btn" aria-label="Favoritos">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </button>
+        <button class="icon-btn" aria-label="Mi cuenta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SEARCH PANEL -->
+  <div class="search-panel" id="search-panel" role="search">
+    <input type="search" placeholder="Buscar productos..." aria-label="Buscar productos">
+    <button class="search-close" id="search-close-btn" aria-label="Cerrar búsqueda">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <!-- MENU OVERLAY -->
+  <div class="menu-overlay" id="menu-overlay" aria-hidden="true"></div>
+
+  <!-- SIDE MENU -->
+  <nav class="side-menu" id="side-menu" aria-label="Menú principal">
+    <div class="side-menu-header">
+      <a href="index.html" class="header-logo"><span class="logo-mark" style="font-size:1.8rem">pé</span></a>
+      <button class="menu-close-btn icon-btn" data-menu-close aria-label="Cerrar menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="side-menu-nav">
+      <a href="index.html">Inicio</a>
+      <a href="product.html">Producto destacado</a>
+      <div class="side-menu-divider"></div>
+      <a href="contact.html">Contáctenos</a>
+      <a href="legal.html">Información legal</a>
+    </div>
+    <div class="side-menu-actions">
+      <a href="cart.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        Carrito
+      </a>
+    </div>
+  </nav>
+
+  <main class="cart-page">
+    <div class="container container--narrow">
+      <h1 class="cart-heading">Tu carrito</h1>
+      <p class="cart-subtitle">
+        Los productos que añadas desde cualquier página permanecerán guardados en este navegador.
+      </p>
+
+      <div class="cart-layout">
+        <section class="cart-panel" aria-labelledby="cart-list-title">
+          <div class="cart-toolbar">
+            <h2 id="cart-list-title" class="section-title" style="margin:0; text-align:left; font-size:1.1rem;">
+              Productos añadidos
+            </h2>
+            <button class="cart-link-btn" type="button" data-clear-cart>Vaciar carrito</button>
+          </div>
+
+          <div class="cart-list" data-cart-list></div>
+
+          <div class="empty-cart" data-empty-cart>
+            <p>
+              Tu carrito está vacío. Añade productos desde la portada o desde la ficha de producto
+              y aparecerán aquí automáticamente.
+            </p>
+            <a class="btn btn--primary" href="index.html">Seguir comprando</a>
+          </div>
+        </section>
+
+        <aside class="cart-summary" aria-labelledby="cart-summary-title">
+          <h2 id="cart-summary-title">Resumen</h2>
+
+          <div class="summary-row">
+            <span>Productos</span>
+            <strong data-summary-items>0</strong>
+          </div>
+
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <strong data-summary-subtotal>0,00€</strong>
+          </div>
+
+          <div class="summary-row">
+            <span>Envío</span>
+            <strong>Gratis</strong>
+          </div>
+
+          <div class="summary-row summary-row--total">
+            <span>Total</span>
+            <strong data-summary-total>0,00€</strong>
+          </div>
+
+          <div class="cart-actions">
+            <button class="btn btn--primary btn--full" type="button">Finalizar compra</button>
+            <a class="btn btn--outline btn--full" href="index.html">Seguir comprando</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="cart-system.js"></script>
+</body>
+</html>

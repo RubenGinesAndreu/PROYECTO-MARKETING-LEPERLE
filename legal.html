@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Información Legal — Le Perlé</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+
+  <!-- PROMO BAR -->
+  <div class="promo-bar">
+    NUEVO: Descubre la nueva mascarilla facial nocturna &mdash; <a href="product.html">Descubrir</a>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-left">
+        <button class="icon-btn" data-menu-toggle aria-label="Abrir menú">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+        </button>
+      </div>
+      <a href="index.html" class="header-logo" aria-label="Le Perlé — Inicio">
+        <span class="logo-mark">pé</span>
+        <span class="logo-sub">Le Perlé</span>
+      </a>
+      <div class="header-right">
+        <button class="icon-btn" data-search-toggle aria-label="Buscar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+        </button>
+        <a href="cart.html" class="icon-btn" aria-label="Carrito">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-badge">0</span>
+        </a>
+        <button class="icon-btn" aria-label="Favoritos">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </button>
+        <button class="icon-btn" aria-label="Mi cuenta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SEARCH PANEL -->
+  <div class="search-panel" id="search-panel" role="search">
+    <input type="search" placeholder="Buscar productos..." aria-label="Buscar productos">
+    <button class="search-close" id="search-close-btn" aria-label="Cerrar búsqueda">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <!-- MENU OVERLAY -->
+  <div class="menu-overlay" id="menu-overlay" aria-hidden="true"></div>
+
+  <!-- SIDE MENU -->
+  <nav class="side-menu" id="side-menu" aria-label="Menú principal">
+    <div class="side-menu-header">
+      <a href="index.html" class="header-logo"><span class="logo-mark" style="font-size:1.8rem">pé</span></a>
+      <button class="menu-close-btn icon-btn" data-menu-close aria-label="Cerrar menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="side-menu-nav">
+      <a href="index.html">Inicio</a>
+      <a href="product.html">Producto destacado</a>
+      <div class="side-menu-divider"></div>
+      <a href="contact.html">Contáctenos</a>
+      <a href="legal.html">Información legal</a>
+    </div>
+    <div class="side-menu-actions">
+      <a href="cart.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        Carrito
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="legal-page">
+      <div class="container--narrow">
+        <div class="legal-header">
+          <h1>Información Legal</h1>
+          <p>Transparencia, confianza y excelencia en cada detalle de tu experiencia con Le Perlé.</p>
+        </div>
+
+        <div class="legal-layout">
+          <aside class="legal-sidebar" aria-label="Secciones legales">
+            <nav class="legal-sidebar-nav">
+              <button class="legal-nav-btn is-active" data-legal="legal-aviso">Aviso legal</button>
+              <button class="legal-nav-btn" data-legal="legal-privacidad">Privacidad</button>
+              <button class="legal-nav-btn" data-legal="legal-cookies">Políticas de cookies</button>
+              <button class="legal-nav-btn" data-legal="legal-condiciones">Condiciones de venta</button>
+            </nav>
+          </aside>
+
+          <div class="legal-content">
+            <div class="legal-panel is-active" id="legal-aviso">
+              <div class="legal-highlight">
+                Le Perlé garantiza la autenticidad y calidad<br>
+                de cada pieza comercializada en este sitio web
+              </div>
+
+              <div class="legal-section">
+                <h3>Titularidad</h3>
+                <p>Le Perlé S.A<br>
+                Calle Gran Vía 250, 08010 Barcelona (Barcelona), España<br>
+                soporte@leperle.com</p>
+              </div>
+
+              <div class="legal-section">
+                <h3>Propiedad intelectual</h3>
+                <p>Todas las fotografías de producto, logotipos y textos contenidos en este sitio son propiedad exclusiva de Le Perlé. Queda prohibida su reproducción total o parcial sin consentimiento expreso.</p>
+              </div>
+
+              <div class="legal-section">
+                <h3>Uso del sitio</h3>
+                <p>El usuario se compromete a hacer un uso diligente del sitio web, absteniéndose de utilizarlo para actividades contrarias a la ley o a la moral.</p>
+                <p>Le Perlé se reserva el derecho de modificar, sin previo aviso, la información contenida en su portal, la configuración y presentación de este y las condiciones de acceso.</p>
+              </div>
+
+              <div class="legal-section">
+                <h3>Responsabilidad</h3>
+                <p>Le Perlé no será responsable de los daños derivados del uso incorrecto de los productos comercializados, ni de la información proporcionada por terceros a través de este sitio.</p>
+              </div>
+            </div>
+
+            <div class="legal-panel" id="legal-privacidad">
+              <div class="legal-highlight">
+                Tus datos personales son tratados con<br>la máxima confidencialidad y seguridad
+              </div>
+
+              <div class="legal-section">
+                <h3>Responsable del tratamiento</h3>
+                <p>Le Perlé S.A, con domicilio en Calle Gran Vía 250, 08010 Barcelona, es la entidad responsable del tratamiento de tus datos personales en cumplimiento del Reglamento General de Protección de Datos (RGPD).</p>
+              </div>
+
+              <div class="legal-section">
+                <h3>Finalidad del tratamiento</h3>
+                <p>Los datos recabados tienen como finalidad la gestión de pedidos, el envío de comunicaciones comerciales previo consentimiento, y la mejora de la experiencia de usuario en nuestra plataforma.</p>
+                <p>No cedemos tus datos a terceros salvo obligación legal o cuando sea estrictamente necesario para la prestación del servicio (transportistas, plataformas de pago).</p>
+              </div>
+
+              <div class="legal-section">
+                <h3>Derechos del usuario</h3>
+                <p>Puedes ejercer tus derechos de acceso, rectificación, supresión, portabilidad y oposición enviando un correo a [soporte@leperle.com](mailto:soporte@leperle.com) con el asunto "Protección de Datos".</p>
+              </div>
+
+              <div class="legal-section">
+                <h3>Conservación de datos</h3>
+                <p>Los datos se conservarán durante el tiempo necesario para cumplir con las finalidades del tratamiento y mientras no solicites su supresión, respetando siempre los plazos legales mínimos.</p>
+              </div>
+            </div>
+
+            <div class="legal-panel" id="legal-cookies">
+              <div class="legal-highlight">
+                Utilizamos cookies para ofrecerte<br>la mejor experiencia posible en Le Perlé
+              </div>
+
+              <div class="legal-section">
+                <h3>¿Qué son las cookies?</h3>
+                <p>Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo cuando visitas nuestra web. Nos permiten recordar tus preferencias y mejorar la navegación.</p>
+              </div>
+
+              <div class="legal-section">
+                <h3>Tipos de cookies que utilizamos</h3>
+                <p><strong style="font-weight:500">Cookies técnicas:</strong> Necesarias para el funcionamiento básico del sitio, como mantener tu sesión activa o gestionar el carrito de compra. No requieren consentimiento.</p>
+                <p><strong style="font-weight:500">Cookies analíticas:</strong> Nos permiten conocer cómo los usuarios interactúan con la web para mejorar su rendimiento. Requieren tu consentimiento.</p>
+                <p><strong style="font-weight:500">Cookies de personalización:</strong> Recuerdan tus preferencias para ofrecerte una experiencia adaptada. Requieren tu consentimiento.</p>
+              </div>
+
+              <div class="legal-section">
+                <h3>Gestión de cookies</h3>
+                <p>Puedes configurar tu navegador para rechazar cookies. Ten en cuenta que algunas funcionalidades del sitio pueden verse afectadas si desactivas las cookies técnicas.</p>
+              </div>
+            </div>
+
+            <div class="legal-panel" id="legal-condiciones">
+              <div class="legal-highlight">
+                Compra con total confianza en Le Perlé.<br>Tu satisfacción es nuestra prioridad
+              </div>
+
+              <div class="legal-section">
+                <h3>Proceso de compra</h3>
+                <p>Para realizar un pedido, el usuario deberá seguir los pasos indicados en el proceso de compra online: selección de productos, introducción de datos de envío y pago, y confirmación del pedido.</p>
+                <p>Le Perlé confirmará la recepción del pedido mediante un correo electrónico automático.</p>
+              </div>
+
+              <div class="legal-section">
+                <h3>Precios y disponibilidad</h3>
+                <p>Todos los precios indicados incluyen el IVA aplicable. Le Perlé se reserva el derecho de modificar los precios en cualquier momento, siendo aplicable el precio vigente en el momento de la realización del pedido.</p>
+              </div>
+
+              <div class="legal-section">
+                <h3>Envíos</h3>
+                <p>Los pedidos se entregan en un plazo de 24 a 48 horas laborables para la Península Ibérica. Los gastos de envío son gratuitos para pedidos superiores a 60€.</p>
+              </div>
+
+              <div class="legal-section">
+                <h3>Devoluciones y reembolsos</h3>
+                <p>El usuario dispone de 30 días naturales desde la recepción del producto para ejercer su derecho de desistimiento. El producto debe estar en perfecto estado y con su embalaje original.</p>
+                <p>Una vez recibida la devolución, procederemos al reembolso íntegro en un plazo máximo de 14 días hábiles.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-col">
+          <h4>Le Perlé</h4>
+          <ul>
+            <li><a href="#">Nuestra historia</a></li>
+            <li><a href="#">Le Perlé Club</a></li>
+            <li><a href="#">Sostenibilidad</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Atención al cliente</h4>
+          <ul>
+            <li><a href="contact.html">Contáctenos</a></li>
+            <li><a href="#">Envíos y entregas</a></li>
+            <li><a href="#">Devoluciones</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="legal.html">Aviso legal</a></li>
+            <li><a href="legal.html">Privacidad</a></li>
+            <li><a href="legal.html">Cookies</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Síguenos</h4>
+          <div class="footer-social">
+            <a href="#">Instagram</a>
+            <a href="#">TikTok</a>
+            <a href="#">Pinterest</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Le Perlé. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
